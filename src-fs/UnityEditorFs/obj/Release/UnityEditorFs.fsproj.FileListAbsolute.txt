@@ -1,0 +1,5 @@
+C:\Users\Jared\Programming Projects\UnityExtensionsFs\Assets\Editor\UnityEditorFs.dll
+C:\Users\Jared\Programming Projects\UnityExtensionsFs\Assets\Editor\UnityEditorFs.pdb
+C:\Users\Jared\Programming Projects\UnityExtensionsFs\src-fs\UnityEditorFs\obj\Release\UnityEditorFs.fsprojResolveAssemblyReference.cache
+C:\Users\Jared\Programming Projects\UnityExtensionsFs\src-fs\UnityEditorFs\obj\Release\UnityEditorFs.dll
+C:\Users\Jared\Programming Projects\UnityExtensionsFs\src-fs\UnityEditorFs\obj\Release\UnityEditorFs.pdb
