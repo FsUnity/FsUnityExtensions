@@ -1,7 +1,10 @@
 /[Rr]eference/
 
 
-
+/src-fs/*/obj/*
+/src-fs/*/obj/*/*
+/src-fs/*/bin/*
+/src-fs/*/bin/*/*
 #=====================
 # Unity Project Files 
 #=====================
