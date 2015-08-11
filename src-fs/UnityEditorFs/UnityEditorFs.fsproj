@@ -56,7 +56,12 @@
   <ItemGroup>
     <Compile Include="Prelude.fs" />
     <Compile Include="Builders.fs" />
+    <Compile Include="Helpers.fs" />
+    <Compile Include="TextBuffer.fs" />
+    <Compile Include="TextEditor.fs" />
     <Compile Include="Library1.fs" />
+    <Compile Include="UnityLock.fs" />
+    <Compile Include="SnapToSurface.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <PropertyGroup>
@@ -86,4 +91,15 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Choose>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v3.5' Or $(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch')">
+      <ItemGroup>
+        <Reference Include="System.Threading">
+          <HintPath>..\..\packages\TaskParallelLibrary\lib\Net35\System.Threading.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

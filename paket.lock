@@ -3,3 +3,4 @@ NUGET
   specs:
     FAKE (4.0.2)
     FSharp.Management (0.3.0)
+    TaskParallelLibrary (1.0.2856.0)
