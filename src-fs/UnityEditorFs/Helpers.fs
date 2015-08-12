@@ -7,6 +7,13 @@ open UnityEditor
 [<AutoOpen>]
 module Helpers =
 
+    let ensureDirectory root folder =
+        if AssetDatabase.IsValidFolder (root+/folder) then () else
+        AssetDatabase.CreateFolder( root, folder) |> ignore
+
+
+
+
     type VerticalBlock ([<ParamArray>] options, ?style:GUIStyle) =
         do if style.IsSome 
             then GUILayout.BeginVertical(style.Value,options) |> ignore

@@ -63,17 +63,3 @@ module SnapToSurface =
                if textButton "-Z" then SnapWindow.Drop(vec3  0.f  0.f -1.f )  
             )
             
-
-//            using (new HorizontalBlock()) (fun _ -> 
-//                if textButton "X" then SnapWindow.Drop(vec3 1.f 0.f 0.f )
-//                if textButton "Y" then SnapWindow.Drop(vec3 0.f 1.f 0.f )
-//                if textButton "Z" then SnapWindow.Drop(vec3 0.f 0.f 1.f )  
-//            )
-//
-//            using (new HorizontalBlock()) (fun _ ->
-//               if textButton "-X" then SnapWindow.Drop(vec3 -1.f  0.f  0.f )
-//               if textButton "-Y" then SnapWindow.Drop(vec3  0.f -1.f  0.f )
-//               if textButton "-Z" then SnapWindow.Drop(vec3  0.f  0.f -1.f )  
-//            )
-//            
-

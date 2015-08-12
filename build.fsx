@@ -4,12 +4,29 @@
 
 open System
 open System.IO
+open System.Diagnostics
 open FSharp.Management
 open Fake
 open Fake.MSBuildHelper
 
 
 Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
+
+let (+/) path1 path2 = Path.Combine(path1, path2)
+let argstr ls = String.concat " " ls
+
+let run cmd args =
+    let pinfo = ProcessStartInfo cmd
+    pinfo.RedirectStandardOutput <- true
+    pinfo.UseShellExecute        <- false
+    pinfo.Arguments              <- args
+    let proc = System.Diagnostics.Process.Start (pinfo)
+    proc.WaitForExit()
+
+let inline quote str = String.Concat["\"";str;"\""]
+let PathName path    = FullName path |> quote
+
+
 
 
 type Relative = RelativePath<".",true>
@@ -44,18 +61,15 @@ Target "EditorClean"( fun _ ->
 Target "EditorExt"( fun _ ->
     trace "Building project files for Unity Engine"
     !! solutionFile
-//    |>  MSBuild 
-//            editorLibs 
-//            "Rebuild"
-//            [   
-//                "Configuration"        , "Release"
-//                "DebugSymbols"         , "false" 
-//                "Optimize"             , "true"  
-//                "Verbosity"            , "some"  
-//                "GenerateDocumentation", "false" 
-//            ]
-    |>  MSBuildRelease editorLibs "Rebuild"
+
+    |>  MSBuildRelease "" "Rebuild"
+//    |>  MSBuildRelease ("Assets"+/"libs") "Rebuild"
     |> ignore
+
+    !! "src-fs/UnityEditorFs/bin/Release/*.dll"
+    |> CopyFiles editorLibs
+    
+
 )
 
 
