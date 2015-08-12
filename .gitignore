@@ -73,3 +73,5 @@ $RECYCLE.BIN/
 .DS_Store
 
 
+
+*.cache
